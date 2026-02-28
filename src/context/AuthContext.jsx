@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect, Children } from "react"; 
+import { createContext, useContext, useState, useEffect } from "react"; 
 
 import {auth, createUserWithEmailAndPassword,          // import from firebase folder
         signInWithEmailAndPassword,     
@@ -31,7 +31,7 @@ export const AuthProvider = ({children})=>{
     };
 
     const login = async (email, password)=>{
-        return signInWithEmailAndPassword(email, password)
+        return signInWithEmailAndPassword(auth, email, password)
     };
 
     const logout = async ()=>{
